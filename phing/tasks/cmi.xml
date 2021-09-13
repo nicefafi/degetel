@@ -1,0 +1,122 @@
+<project name="cmi" default="cmi">
+
+  <!-- ## Properties -->
+  <target name="import-config"
+          description="Drush config import.">
+    <echo msg="Drush config import............................." />
+    <exec command="${drush.bin} cim -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="drush-config:import:local"
+          description="Drush config split import LOCAL.">
+    <echo msg="Drush config split import local............................." />
+    <exec command="${drush.bin} csim local -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="drush-config:import:dev"
+          description="Drush config split import DEV.">
+    <echo msg="Drush config split import dev............................." />
+    <exec command="${drush.bin} csim dev -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="export-config"
+          description="Drush config export.">
+    <echo msg="Drush config export............................." />
+    <exec command="${drush.bin} cex -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="import-content-dcd"
+          description="Drush content import.">
+    <echo msg="Drush content import............................." />
+    <exec command="${drush.bin} dcdi --verbose --force-update --force-override -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="export-content-dcd"
+          description="Drush export all content.">
+    <echo msg="Drush all content export............................." />
+    <exec command="${drush.bin} dcdes -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="locale-update"
+          description="Drush update traduction.">
+    <echo msg="Drush update traduction............................." />
+    <exec command="${drush.bin} locale:update"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="import-menus"
+          description="Drush import menu.">
+    <echo msg="Drush import menus............................." />
+    <exec command="${drush.bin} import-menus --choice=full"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="import-blocks"
+          description="Drush import blocks.">
+    <echo msg="Drush import blocks ............................." />
+    <exec command="${drush.bin} import-blocks --choice=full"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="import-taxonomies"
+          description="Drush import taxonomies.">
+    <echo msg="Drush import taxonomies............................." />
+    <exec command="${drush.bin} import-taxonomies --choice=full"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="import-content"
+          description="Drush content import.">
+    <echo msg="Drush content import............................." />
+    <exec command="${drush.bin} csi -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+
+  <target name="set-lang-en-uuid">
+    <echo msg="Start set language.entity.en:uuid ............................." />
+    <exec command="${drush.bin}  cset language.entity.en uuid ${lang.en.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="set-lang-fr-uuid">
+    <echo msg="Start set language.entity.fr:uuid ............................." />
+    <exec command="${drush.bin}  cset language.entity.fr uuid ${lang.fr.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="set-lang-und-uuid">
+    <echo msg="Start set language.entity.und:uuid ............................." />
+    <exec command="${drush.bin}  cset language.entity.und uuid ${lang.und.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="set-lang-zxx-uuid">
+    <echo msg="Start set language.entity.zxx:uuid ............................." />
+    <exec command="${drush.bin}  cset language.entity.zxx uuid ${lang.zxx.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+
+</project>

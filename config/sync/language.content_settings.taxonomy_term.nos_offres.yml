@@ -1,0 +1,11 @@
+uuid: 588c2807-915e-467f-9a1f-a743264ad96b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nos_offres
+id: taxonomy_term.nos_offres
+target_entity_type_id: taxonomy_term
+target_bundle: nos_offres
+default_langcode: site_default
+language_alterable: false

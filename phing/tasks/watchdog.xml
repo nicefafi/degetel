@@ -1,0 +1,12 @@
+<project name="drush-watchdog" default="drush-watchdog:clear">
+    
+    <!-- ## Targets -->
+    <target name="drush-watchdog:clear"
+            description="Clears the watchdog logs.">
+        <echo msg="Clears the watchdog logs............................." />
+        <exec command="${drush.bin} wd-del all -y"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+</project>

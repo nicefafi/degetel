@@ -1,0 +1,42 @@
+uuid: 6e535a82-1ba4-4bee-ab08-4e409864de45
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_evenements.field_date
+    - field.field.taxonomy_term.nos_evenements.field_image
+    - taxonomy.vocabulary.nos_evenements
+  module:
+    - datetime
+    - text
+id: taxonomy_term.nos_evenements.default
+targetEntityType: taxonomy_term
+bundle: nos_evenements
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

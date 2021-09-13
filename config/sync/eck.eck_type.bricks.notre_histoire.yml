@@ -1,0 +1,9 @@
+uuid: ef27ca0d-865b-4611-a2fd-6981eafb4a14
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: notre_histoire
+name: 'Notre histoire'
+description: ''

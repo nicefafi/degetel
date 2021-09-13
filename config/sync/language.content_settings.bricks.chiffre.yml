@@ -1,0 +1,18 @@
+uuid: 7df1a60e-2aea-40d5-af3f-7e0d48d75e4f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.chiffre
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: bricks.chiffre
+target_entity_type_id: bricks
+target_bundle: chiffre
+default_langcode: site_default
+language_alterable: true

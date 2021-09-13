@@ -1,0 +1,131 @@
+# -------------------- #
+# Drupal configuration #
+# -------------------- #
+
+# The project name. (only lower case letters and underscores without spaces)
+project.name = research-center
+
+# The install profile to use. standard
+website.profile.name = standard
+
+# Default lang site.
+drupal.sites.local = en
+
+# The site name.
+website.site.name = degetel
+
+# Admin user.
+drupal.admin.username = admin
+drupal.admin.password = admin
+drupal.admin.email = farouk.dhahri@gmail.com
+
+drupal.admin = --account-name=${drupal.admin.username} --account-pass=${drupal.admin.password} --account-mail=${drupal.admin.email}
+
+# Database settings.
+drupal.db.type = mysql
+# following setting is for travis, please use something like ${project.name}
+#drupal.db.name = ${project.name}
+drupal.db.name = drupal_degetel
+# following setting is for travis, please use something like ${project.name}_user
+drupal.db.user = root
+drupal.db.password = mysqlroot
+drupal.db.host = degetel_mariadb
+drupal.db.port = 3306
+drupal.db.url = ${drupal.db.type}://${drupal.db.user}:${drupal.db.password}@${drupal.db.host}:${drupal.db.port}/${drupal.db.name}
+
+
+
+
+# Comma-separated list of demo users to create. The username and password will
+# be taken from the role.
+drupal.demo.users = administrator
+
+# The base URL. This is used for doing functional tests in Behat and PHPUnit.
+drupal.base_url = http://localhost
+
+# Please comment out if you need to set the site uuid in case you work in a team and you didn't import an initial database.
+# See core-bug https://www.drupal.org/node/2583113 for the necessity to set in this case also the shortcut.uuid
+website.uuid = f7d4ddbd-1096-4f94-8cd9-fd7c62cdad10
+shortcut.uuid = 8b02c1b2-920f-4841-b851-f6e94a5a1ff1
+
+# Fix import lang
+lang.fr.uuid = 591f4500-b9ec-46b7-a9f4-8a3d59a917a8
+lang.und.uuid = 4930f508-e50f-45f6-a92a-47b8d1b73704
+lang.zxx.uuid = 382efc78-a5e3-4f15-9436-37dacdd5df46
+
+# Theme related
+# -------------------
+
+# Theme options, please uncomment if you use npm and gulp or grunt for theme tasks
+theme.name = ${project.name}
+# npm.task = run setup
+# gulp.task = build
+# grunt.task = build
+
+# Modules options
+# -------------------
+
+# Development modules to enable on dev environment.
+drupal.modules.dev = devel webprofiler field_ui menu_ui views_ui stago_dummy_content
+
+# Development modules to uninstall on PROD environment.
+drupal.modules.noprod = realistic_dummy_content views_ui devel
+
+
+# Drush
+# -------------------
+
+# Verbosity of Drush commands. Set to 'yes' for verbose output.
+drush.verbose = no
+
+# DB-dump naming
+# -------------------
+db.dump.rollback.name = ${project.name}-rollback.sql
+db.dump.staging.name = ${project.name}-staging.sql
+db.dump.staging.name.compressed = ${db.dump.staging.name}.gz
+
+
+
+# ----- #
+# Paths #
+# ----- #
+project.basedir = /var/www
+# Paths to executables.
+composer.bin = /usr/local/bin/composer
+drush.bin = ${project.basedir}/vendor/bin/drush
+phing.bin = ${project.basedir}/vendor/bin/phing
+drupal.bin = ${project.basedir}/vendor/bin/drupal
+
+# Integration static directorie
+integration.dir = ${project.basedir}/integration
+
+# Files and directories inside the Drupal installation.
+website.drupal.dir = ${project.basedir}/html
+
+website.sites.dir = ${website.drupal.dir}/sites
+website.site.dir = ${website.drupal.sites.dir}/all
+
+website.settings.dir = ${website.sites.dir}/default
+website.settings.php = ${website.settings.dir}/settings.php
+website.files.dir = ${website.settings.dir}/files
+website.config.directory = config_sync
+
+website.modules.dir = ${website.drupal.dir}/modules
+website.profiles.dir = ${website.drupal.dir}/profiles
+website.themes.dir = ${website.drupal.dir}/themes
+
+db.dump.path = ${project.basedir}/db-dump
+db.dump.rollback.directory = ${db.dump.path}/dbdump-rollback
+db.dump.develop.directory = ${db.dump.path}/dbdump-develop
+db.dump.s3.directory = ${db.dump.path}/dbdump-latest-aws
+db.dump.rollback.name = ${project.name}-rollback.sql
+db.dump.develop.name = ${project.name}-develop.sql
+db.dump.staging.name.compressed = ${db.dump.develop.name}.gz
+
+# Assets path
+# -------------------
+assets.staging.source = ${project.basedir}/assets/files
+
+# Tests path
+# -------------------
+tests.e2e.dir = ${project.basedir}/tests

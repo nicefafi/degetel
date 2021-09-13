@@ -1,0 +1,61 @@
+uuid: e9706280-fe3c-4a37-915e-6c6983ad0cc4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_offres.field_couleur
+    - field.field.taxonomy_term.nos_offres.field_date
+    - field.field.taxonomy_term.nos_offres.field_poste
+    - field.field.taxonomy_term.nos_offres.field_rich_texte
+    - taxonomy.vocabulary.nos_offres
+  module:
+    - color_field
+    - datetime
+    - text
+id: taxonomy_term.nos_offres.default
+targetEntityType: taxonomy_term
+bundle: nos_offres
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_couleur:
+    weight: 2
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_date:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_poste:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rich_texte:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

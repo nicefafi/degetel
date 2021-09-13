@@ -1,0 +1,29 @@
+uuid: 186257db-8587-4b8b-b99a-f8e05948d654
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.histoire
+    - eck.eck_type.bricks.notre_histoire
+    - field.storage.bricks.field_histoire
+id: bricks.notre_histoire.field_histoire
+field_name: field_histoire
+entity_type: bricks
+bundle: notre_histoire
+label: Histoire
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:bricks'
+  handler_settings:
+    target_bundles:
+      histoire: histoire
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

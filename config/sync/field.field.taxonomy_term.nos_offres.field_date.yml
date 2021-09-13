@@ -1,0 +1,21 @@
+uuid: 693e5963-1b44-4053-8190-108094cc2440
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_date
+    - taxonomy.vocabulary.nos_offres
+  module:
+    - datetime
+id: taxonomy_term.nos_offres.field_date
+field_name: field_date
+entity_type: taxonomy_term
+bundle: nos_offres
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

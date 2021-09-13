@@ -1,0 +1,29 @@
+uuid: cbd67c95-4e91-4679-b0b4-08e10df5462d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.chiffre
+    - eck.eck_type.bricks.chiffres
+    - field.storage.bricks.field_chiffre
+id: bricks.chiffres.field_chiffre
+field_name: field_chiffre
+entity_type: bricks
+bundle: chiffres
+label: Chiffre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:bricks'
+  handler_settings:
+    target_bundles:
+      chiffre: chiffre
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

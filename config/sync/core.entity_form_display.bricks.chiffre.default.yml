@@ -1,0 +1,45 @@
+uuid: c654845c-b927-4045-91ef-fa8bdfae98c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.chiffre
+    - field.field.bricks.chiffre.field_texte_chiffre
+    - field.field.bricks.chiffre.field_texte_simple
+id: bricks.chiffre.default
+targetEntityType: bricks
+bundle: chiffre
+mode: default
+content:
+  field_texte_chiffre:
+    weight: 2
+    settings:
+      size: 30
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_texte_simple:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

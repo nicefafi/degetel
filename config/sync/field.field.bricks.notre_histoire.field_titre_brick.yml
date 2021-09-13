@@ -1,0 +1,19 @@
+uuid: 81925c3a-6680-4e56-b6ad-17b9a89ddd2d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.notre_histoire
+    - field.storage.bricks.field_titre_brick
+id: bricks.notre_histoire.field_titre_brick
+field_name: field_titre_brick
+entity_type: bricks
+bundle: notre_histoire
+label: Titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 8e5cd90d-9c00-47f5-8158-95e5a2e20a15
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_solutions
+    - field.storage.bricks.field_titre_brick
+id: bricks.nos_solutions.field_titre_brick
+field_name: field_titre_brick
+entity_type: bricks
+bundle: nos_solutions
+label: Titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

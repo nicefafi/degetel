@@ -1,0 +1,21 @@
+uuid: 1266f804-79c1-4c1c-9fe8-9c8e86790ef6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+id: bricks.field_texte_simple
+field_name: field_texte_simple
+entity_type: bricks
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

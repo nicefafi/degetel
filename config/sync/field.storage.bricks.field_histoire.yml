@@ -1,0 +1,19 @@
+uuid: 28fdfcb6-d3ec-46b9-b2ae-96341d8a559c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+id: bricks.field_histoire
+field_name: field_histoire
+entity_type: bricks
+type: entity_reference
+settings:
+  target_type: bricks
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

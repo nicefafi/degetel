@@ -1,0 +1,19 @@
+uuid: 1243ca2a-5e36-4621-83ba-506c900b1f0a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - yearonly
+id: bricks.field_annee
+field_name: field_annee
+entity_type: bricks
+type: yearonly
+settings: {  }
+module: yearonly
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

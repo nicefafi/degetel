@@ -1,0 +1,22 @@
+uuid: 89c560f4-5f87-45c2-a7b0-78b27f9b4f08
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_evenements
+    - field.field.bricks.nos_evenements.field_evenements
+id: bricks.nos_evenements.default
+targetEntityType: bricks
+bundle: nos_evenements
+mode: default
+content:
+  field_evenements:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

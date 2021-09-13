@@ -1,0 +1,29 @@
+uuid: 436c5ec9-7932-45af-9891-3ec2b2025aae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_evenements
+    - field.storage.bricks.field_evenements
+    - taxonomy.vocabulary.nos_evenements
+id: bricks.nos_evenements.field_evenements
+field_name: field_evenements
+entity_type: bricks
+bundle: nos_evenements
+label: Evénements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nos_evenements: nos_evenements
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

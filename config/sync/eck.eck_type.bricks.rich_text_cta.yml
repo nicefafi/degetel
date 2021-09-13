@@ -1,0 +1,9 @@
+uuid: 69d22d5f-5e34-4309-8815-f99c8a0654fb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: rich_text_cta
+name: 'Rich text + CTA'
+description: ''

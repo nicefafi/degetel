@@ -1,0 +1,28 @@
+uuid: e1353f50-2267-48bd-94b0-318f9df60054
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.candidature.field_media_file
+    - media.type.candidature
+  module:
+    - file
+id: media.candidature.default
+targetEntityType: media
+bundle: candidature
+mode: default
+content:
+  field_media_file:
+    label: visually_hidden
+    weight: 0
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

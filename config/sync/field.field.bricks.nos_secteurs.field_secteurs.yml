@@ -1,0 +1,29 @@
+uuid: 268ee844-fac7-4313-9af3-d16360491151
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_secteurs
+    - field.storage.bricks.field_secteurs
+    - taxonomy.vocabulary.nos_secteurs
+id: bricks.nos_secteurs.field_secteurs
+field_name: field_secteurs
+entity_type: bricks
+bundle: nos_secteurs
+label: Secteurs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nos_secteurs: nos_secteurs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

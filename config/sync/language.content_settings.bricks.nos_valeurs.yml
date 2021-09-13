@@ -1,0 +1,18 @@
+uuid: 0643206c-8761-4fa8-b479-6b5ce0ba3fad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_valeurs
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: bricks.nos_valeurs
+target_entity_type_id: bricks
+target_bundle: nos_valeurs
+default_langcode: site_default
+language_alterable: true

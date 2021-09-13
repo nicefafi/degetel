@@ -1,0 +1,66 @@
+<project name="database" default="drush-database:update">
+
+    <!-- ## Properties -->
+
+    <property name="drush.bin"      value="${project.basedir}/bin/drush" />
+    <property name="db.dump.develop.name"   value="" />
+    <property name="getbacks"   value="/home/wwwdev/./getbacks.sh" />
+    <property name="db.dump.develop.directory"   value="" />
+    <property name="database.name.s3" value="daily_discover.sql.gz" />
+    <property name="database.compressed.s3" value="eu01/prd/marketing-prd-aurora/latest" />
+    <property name="db.dump.s3.directory" value="" />
+    <property name="drush.dump.dir" value="/tmp" />
+
+    <target name="drush-database:update"
+            description="Performs database updates.">
+        <echo msg="Performs database updates............................." />
+        <exec command="${drush.bin} updb --verbose -y"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+    <target name="drush-database:entity-update"
+            description="Update entity.">
+        <echo msg="Entity database updates............................." />
+        <exec command="${drush.bin} entup -y"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+    <target name="drush-database:drop"
+            description="Drops the target database.">
+        <echo msg="Drops the target database............................." />
+        <exec command="${drush.bin} sql-drop -y"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+    <target name="drush-database:save-develop"
+            description="Dump database develop.">
+        <echo msg="Dump database develop............................." />
+        <exec command="${drush.bin} sql-dump -y --gzip --result-file=${db.dump.develop.directory}/${db.dump.develop.name}"
+              passthru="true"
+              checkreturn="true" />
+
+    </target>
+
+    <target name="drush-database:import-from-s3"
+            description="Import Database from S3 backup.">
+    <echo msg="Import Database from S3 backup............................." />
+    <exec command="${getbacks} get ${database.compressed.s3}/${database.name.s3}"
+          passthru="true"
+          dir="database.xml"
+          checkreturn="true" />
+
+    </target>
+
+    <target name="drush-database:restore-from-s3-dump"
+            description="Restore Database from S3 backup.">
+        <echo msg="Restore Database from S3 backup............................." />
+        <exec command="zcat ${db.dump.s3.directory}/${database.name.s3} | ${drush.bin} sqlc"
+              passthru="true"
+              checkreturn="true" />
+
+    </target>
+
+</project>

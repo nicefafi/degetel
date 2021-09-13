@@ -1,0 +1,8 @@
+uuid: 48189c31-808a-4bd0-bd1b-0f34a6627877
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos solutions'
+vid: nos_solutions
+description: ''
+weight: 0

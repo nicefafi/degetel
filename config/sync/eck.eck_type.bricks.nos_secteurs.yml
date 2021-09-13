@@ -1,0 +1,9 @@
+uuid: 0ddf0608-7ee8-420d-814f-2e0df79d87a6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: nos_secteurs
+name: 'Nos secteurs'
+description: ''

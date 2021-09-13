@@ -1,0 +1,45 @@
+uuid: 790dc427-4a03-4c36-81aa-62f1e1a32e4f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.chiffres
+    - eck.eck_type.bricks.nos_clients
+    - eck.eck_type.bricks.nos_evenements
+    - eck.eck_type.bricks.nos_secteurs
+    - eck.eck_type.bricks.nos_solutions
+    - eck.eck_type.bricks.nos_valeurs
+    - eck.eck_type.bricks.notre_histoire
+    - eck.eck_type.bricks.rich_text
+    - eck.eck_type.bricks.rich_text_cta
+    - field.storage.node.field_bricks
+    - node.type.page
+id: node.page.field_bricks
+field_name: field_bricks
+entity_type: node
+bundle: page
+label: Composant(s)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:bricks'
+  handler_settings:
+    target_bundles:
+      chiffres: chiffres
+      nos_clients: nos_clients
+      nos_secteurs: nos_secteurs
+      nos_solutions: nos_solutions
+      nos_valeurs: nos_valeurs
+      nos_evenements: nos_evenements
+      notre_histoire: notre_histoire
+      rich_text: rich_text
+      rich_text_cta: rich_text_cta
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: notre_histoire
+field_type: entity_reference

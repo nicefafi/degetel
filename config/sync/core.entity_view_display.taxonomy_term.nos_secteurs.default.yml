@@ -1,0 +1,31 @@
+uuid: 51fe305b-7fda-4b1b-9038-2d5b6d20fceb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_secteurs.field_image
+    - taxonomy.vocabulary.nos_secteurs
+  module:
+    - text
+id: taxonomy_term.nos_secteurs.default
+targetEntityType: taxonomy_term
+bundle: nos_secteurs
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

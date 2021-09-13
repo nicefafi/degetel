@@ -1,0 +1,9 @@
+uuid: a2ab671d-0cbb-421b-9b82-609c915813b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: nos_evenements
+name: 'Nos événements'
+description: ''

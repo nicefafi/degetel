@@ -1,0 +1,25 @@
+<project name="cache" default="drush-cache:rebuild">
+
+    <!-- ## Properties -->
+    <target name="drush-cache:rebuild"
+            description="Rebuilds the Drupal cache.">
+        <echo msg="Rebuilds the Drupal cache............................." />
+        <exec command="${drush.bin} cr"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+    <target name="drush-cache:disable"
+            description="Disables Drupal page cache and CSS and JS aggregation.">
+        <exec command="${drush.bin} cset -y system.performance cache.page.max_age 0"
+              passthru="true"
+              checkreturn="true" />
+        <exec command="${drush.bin} cset -y system.performance css.preprocess 0"
+              passthru="true"
+              checkreturn="true" />
+        <exec command="${drush.bin} cset -y system.performance js.preprocess 0"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+</project>

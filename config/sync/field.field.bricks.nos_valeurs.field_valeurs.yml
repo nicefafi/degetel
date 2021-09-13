@@ -1,0 +1,29 @@
+uuid: 3e8ca0ef-81ad-45da-b18b-06144361cf39
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_valeurs
+    - field.storage.bricks.field_valeurs
+    - taxonomy.vocabulary.nos_valeurs
+id: bricks.nos_valeurs.field_valeurs
+field_name: field_valeurs
+entity_type: bricks
+bundle: nos_valeurs
+label: Valeur(s)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nos_valeurs: nos_valeurs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

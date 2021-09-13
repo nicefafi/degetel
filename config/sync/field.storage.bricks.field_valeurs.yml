@@ -1,0 +1,20 @@
+uuid: a12faa1a-8f1e-4640-b5c0-9b6e732c1a9b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: bricks.field_valeurs
+field_name: field_valeurs
+entity_type: bricks
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

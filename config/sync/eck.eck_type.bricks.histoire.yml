@@ -1,0 +1,9 @@
+uuid: ba56e606-e99f-43bb-8130-5058e3352d11
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: histoire
+name: Histoire
+description: ''

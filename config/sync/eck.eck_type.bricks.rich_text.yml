@@ -1,0 +1,9 @@
+uuid: e77acc2f-2cb2-4e84-a16f-4b66d4ec2e7a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: rich_text
+name: 'Rich text'
+description: ''

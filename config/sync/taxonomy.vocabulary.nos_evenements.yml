@@ -1,0 +1,8 @@
+uuid: fabea875-fb22-4a2b-9558-c89b59001ce5
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos événements'
+vid: nos_evenements
+description: ''
+weight: 0

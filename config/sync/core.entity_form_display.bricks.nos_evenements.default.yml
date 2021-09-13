@@ -1,0 +1,28 @@
+uuid: 6ebc87b0-b484-4465-88b8-ce03fada031d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_evenements
+    - field.field.bricks.nos_evenements.field_evenements
+  module:
+    - multiselect
+id: bricks.nos_evenements.default
+targetEntityType: bricks
+bundle: nos_evenements
+mode: default
+content:
+  field_evenements:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: multiselect
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

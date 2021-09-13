@@ -1,0 +1,8 @@
+uuid: 4b7cc749-05b9-4980-93e6-2c6ea95a34b5
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos clients'
+vid: nos_clients
+description: ''
+weight: 0

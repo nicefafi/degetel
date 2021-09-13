@@ -1,0 +1,31 @@
+uuid: a13a739c-cb55-4e88-8f08-87465dcffa3e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_solutions
+    - field.field.bricks.nos_solutions.field_solutions
+    - field.field.bricks.nos_solutions.field_titre_brick
+id: bricks.nos_solutions.default
+targetEntityType: bricks
+bundle: nos_solutions
+mode: default
+content:
+  field_solutions:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_titre_brick:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

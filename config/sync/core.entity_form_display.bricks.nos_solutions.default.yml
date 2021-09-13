@@ -1,0 +1,42 @@
+uuid: 949df719-f8c3-4bd8-bd3c-0459d89c7ee3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_solutions
+    - field.field.bricks.nos_solutions.field_solutions
+    - field.field.bricks.nos_solutions.field_titre_brick
+  module:
+    - multiselect
+id: bricks.nos_solutions.default
+targetEntityType: bricks
+bundle: nos_solutions
+mode: default
+content:
+  field_solutions:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: multiselect
+    region: content
+  field_titre_brick:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

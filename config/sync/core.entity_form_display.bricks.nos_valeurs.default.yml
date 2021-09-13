@@ -1,0 +1,50 @@
+uuid: cdbdd753-2ee3-453a-b935-81ce158a7a46
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_valeurs
+    - field.field.bricks.nos_valeurs.field_titre_brick
+    - field.field.bricks.nos_valeurs.field_valeurs
+  module:
+    - multiselect
+id: bricks.nos_valeurs.default
+targetEntityType: bricks
+bundle: nos_valeurs
+mode: default
+content:
+  field_titre_brick:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_valeurs:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: multiselect
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,20 @@
+<project name="maintenance-mode" default="drush-maintenance:off">
+    
+    <!-- ## Targets -->
+    <target name="drush-maintenance:on"
+            description="Turns on Drupal maintenance modes.">
+        <echo msg="Turns on Drupal maintenance modes............................." />
+        <exec command="${drush.bin} sset -y system.maintenance_mode 1"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+    
+    <target name="drush-maintenance:off"
+            description="Turns off Drupal maintenance mode.">
+        <echo msg="Turns off Drupal maintenance mode............................." />
+        <exec command="${drush.bin} sset -y system.maintenance_mode 0"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+</project>

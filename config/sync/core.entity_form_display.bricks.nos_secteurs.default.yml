@@ -1,0 +1,42 @@
+uuid: 087388a4-ddb9-4c09-9701-2c7864892262
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_secteurs
+    - field.field.bricks.nos_secteurs.field_secteurs
+    - field.field.bricks.nos_secteurs.field_titre_brick
+  module:
+    - multiselect
+id: bricks.nos_secteurs.default
+targetEntityType: bricks
+bundle: nos_secteurs
+mode: default
+content:
+  field_secteurs:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: multiselect
+    region: content
+  field_titre_brick:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

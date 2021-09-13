@@ -1,0 +1,15 @@
+uuid: dd62baeb-19c5-4b42-bba9-12b70a280d6b
+langcode: fr
+status: true
+dependencies: {  }
+id: bulk_media_images
+label: 'Bulk media images'
+media_types:
+  image: image
+  audio: 0
+  document: 0
+  remote_video: 0
+  video: 0
+show_alt: null
+show_title: null
+form_mode: ''

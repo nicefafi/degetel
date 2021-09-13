@@ -1,0 +1,52 @@
+uuid: 0dfbe62a-645e-4853-9f66-3981253708a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.rich_text
+    - field.field.bricks.rich_text.field_titre_brick
+    - field.field.bricks.rich_text.field_wysiwyg
+  module:
+    - text
+id: bricks.rich_text.default
+targetEntityType: bricks
+bundle: rich_text
+mode: default
+content:
+  field_titre_brick:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_wysiwyg:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

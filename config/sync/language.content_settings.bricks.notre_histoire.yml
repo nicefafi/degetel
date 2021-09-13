@@ -1,0 +1,18 @@
+uuid: 35edb982-f1ae-4d45-814b-547dcf2dbbd5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.notre_histoire
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: bricks.notre_histoire
+target_entity_type_id: bricks
+target_bundle: notre_histoire
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,19 @@
+uuid: f5f903ad-01be-4d6b-9be7-6490141cd27d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.rich_text
+    - field.storage.bricks.field_titre_brick
+id: bricks.rich_text.field_titre_brick
+field_name: field_titre_brick
+entity_type: bricks
+bundle: rich_text
+label: Titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

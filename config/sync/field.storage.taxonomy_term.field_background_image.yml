@@ -1,0 +1,20 @@
+uuid: 6c5ae0e5-7190-4810-aafb-e6cfaeae53a9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+id: taxonomy_term.field_background_image
+field_name: field_background_image
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

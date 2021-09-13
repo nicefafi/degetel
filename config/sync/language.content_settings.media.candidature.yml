@@ -1,0 +1,11 @@
+uuid: d0c1cfbf-cf28-42d5-9052-b17102539403
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.candidature
+id: media.candidature
+target_entity_type_id: media
+target_bundle: candidature
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: 00e5909d-476c-4ed7-ab72-9f4f1b5f028c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.histoire
+    - field.storage.bricks.field_annee
+  module:
+    - yearonly
+id: bricks.histoire.field_annee
+field_name: field_annee
+entity_type: bricks
+bundle: histoire
+label: Année
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  yearonly_from: '1900'
+  yearonly_to: '2025'
+field_type: yearonly

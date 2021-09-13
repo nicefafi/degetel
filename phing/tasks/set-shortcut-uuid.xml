@@ -1,0 +1,11 @@
+<project name="set-shortcut-uuid" default="set-shortcut-uuid">
+  
+  <!-- Synchronise the site uuid". -->
+  <target name="set-shortcut-uuid">
+    <echo msg="Start set shortcut.set.default:uuid ............................." />
+    <exec command="${drush.bin}  cset shortcut.set.default uuid ${shortcut.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+</project>

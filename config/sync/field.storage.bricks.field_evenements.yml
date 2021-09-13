@@ -1,0 +1,20 @@
+uuid: b6cd51a2-0ae9-4fa6-af3d-d92293eb1c7a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: bricks.field_evenements
+field_name: field_evenements
+entity_type: bricks
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

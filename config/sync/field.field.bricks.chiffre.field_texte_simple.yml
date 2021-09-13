@@ -1,0 +1,19 @@
+uuid: 44bdefaa-a807-47f0-8005-d048ce90eccf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.chiffre
+    - field.storage.bricks.field_texte_simple
+id: bricks.chiffre.field_texte_simple
+field_name: field_texte_simple
+entity_type: bricks
+bundle: chiffre
+label: Texte
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

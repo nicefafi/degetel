@@ -1,0 +1,17 @@
+<project name="version" default="version:git">
+
+    <!-- ## Properties -->
+
+    <property name="website.drupal.dir" value="${project.basedir}" />
+
+    <target name="version:git">
+        <exec command="echo Project latest Tag -  $(git describe --abbrev=0 --tags)-SNAPSHOT > ${website.drupal.dir}/version.txt" />
+        <exec command="echo Last commit hash - $(git rev-parse --verify HEAD) >> ${website.drupal.dir}/version.txt" />
+        <exec command="echo Build at -  `date '+%Y-%m-%d %H:%M:%S'` >> ${website.drupal.dir}/version.txt" />
+    </target>
+
+    <target name="build-info:file">
+        <phingcall target="version:git" />
+    </target>
+
+</project>

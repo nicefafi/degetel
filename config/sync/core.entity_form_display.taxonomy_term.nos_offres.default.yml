@@ -1,0 +1,119 @@
+uuid: a4735c71-0061-4b6c-8b04-dcbe89bcb9fa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_offres.field_couleur
+    - field.field.taxonomy_term.nos_offres.field_date
+    - field.field.taxonomy_term.nos_offres.field_poste
+    - field.field.taxonomy_term.nos_offres.field_rich_texte
+    - taxonomy.vocabulary.nos_offres
+  module:
+    - color_field
+    - datetime
+    - field_group
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_full_page:
+      children:
+        - field_poste
+        - field_date
+        - field_rich_texte
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: false
+      label: 'Full page'
+    group_accroche:
+      children:
+        - field_couleur
+        - description
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: false
+      label: Accroche
+id: taxonomy_term.nos_offres.default
+targetEntityType: taxonomy_term
+bundle: nos_offres
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_couleur:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: color_field_widget_html5
+    region: content
+  field_date:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_poste:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rich_texte:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+hidden: {  }

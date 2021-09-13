@@ -1,0 +1,11 @@
+uuid: 1c0394b7-5f3c-4826-b768-eb92996d1837
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nos_evenements
+id: taxonomy_term.nos_evenements
+target_entity_type_id: taxonomy_term
+target_bundle: nos_evenements
+default_langcode: site_default
+language_alterable: false

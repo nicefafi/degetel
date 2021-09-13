@@ -1,0 +1,18 @@
+uuid: cb54e719-176f-4b40-a88e-e72c9da85bfd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.user.metatag
+field_name: metatag
+entity_type: user
+bundle: user
+label: 'Metatags (Hidden field for JSON support)'
+description: 'Les balises méta de l''entité.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

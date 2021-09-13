@@ -1,0 +1,21 @@
+uuid: dd1870f9-9ace-496e-997d-0776501a051a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rich_texte
+    - taxonomy.vocabulary.nos_offres
+  module:
+    - text
+id: taxonomy_term.nos_offres.field_rich_texte
+field_name: field_rich_texte
+entity_type: taxonomy_term
+bundle: nos_offres
+label: 'Rich Texte'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

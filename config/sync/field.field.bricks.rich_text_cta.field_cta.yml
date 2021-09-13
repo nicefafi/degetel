@@ -1,0 +1,23 @@
+uuid: 99af1781-0de1-4c4f-b964-c3b5e2859f21
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.rich_text_cta
+    - field.storage.bricks.field_cta
+  module:
+    - link
+id: bricks.rich_text_cta.field_cta
+field_name: field_cta
+entity_type: bricks
+bundle: rich_text_cta
+label: CTA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

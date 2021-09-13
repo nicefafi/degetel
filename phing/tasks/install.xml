@@ -1,0 +1,25 @@
+<project name="install" default="install">
+
+  <!-- ## Targets -->
+  <target name="install" description="Installs Drupal on a clean database.">
+    <exec command="${drush.bin} si ${website.profile.name}
+    --db-url=${drupal.db.url}
+    --site-name=${website.site.name}
+    --account-name=${drupal.admin.username}
+    --account-pass=${drupal.admin.password}
+    --account-mail=${drupal.admin.email}
+    --locale=${drupal.sites.local}
+    -y"
+          passthru="true"
+          checkreturn="true"
+    />
+  </target>
+
+  <target name="install-with-conf" description="Installs Drupal with the current conf.">
+    <exec command="${drush.bin} si minimal --existing-config -y"
+          passthru="true"
+          checkreturn="true"
+    />
+  </target>
+
+</project>

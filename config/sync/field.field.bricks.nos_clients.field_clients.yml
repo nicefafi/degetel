@@ -1,0 +1,29 @@
+uuid: 1ff0f7ec-c826-4b2b-8ee4-163224839824
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_clients
+    - field.storage.bricks.field_clients
+    - taxonomy.vocabulary.nos_clients
+id: bricks.nos_clients.field_clients
+field_name: field_clients
+entity_type: bricks
+bundle: nos_clients
+label: Clients
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nos_clients: nos_clients
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

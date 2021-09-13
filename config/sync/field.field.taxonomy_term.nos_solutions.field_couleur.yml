@@ -1,0 +1,22 @@
+uuid: 06621e73-9294-4657-89e3-7a2beeee9ad9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_couleur
+    - taxonomy.vocabulary.nos_solutions
+  module:
+    - color_field
+id: taxonomy_term.nos_solutions.field_couleur
+field_name: field_couleur
+entity_type: taxonomy_term
+bundle: nos_solutions
+label: Couleur
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

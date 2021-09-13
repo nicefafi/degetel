@@ -1,0 +1,27 @@
+<project name="front-end" default="front-end">
+
+  <target name="npm-install">
+    <if>
+      <available file="${integration.dir}" type="dir" property="integration.dir.available" />
+      <then>
+        <exec command="npm install" dir="${integration.dir}" passthru="true" checkreturn="true" />
+      </then>
+      <else>
+        <echo msg="Dossier integration n'existe pas ! il faut faire d'abord : git clone git@gitlab.com:youzful/jobwaze-integration.git integration" />
+      </else>
+    </if>
+  </target>
+
+  <target name="gulp-build">
+    <if>
+      <available file="${integration.dir}/gulpfile.js" type="file" property="integration.gulp.available" />
+      <then>
+        <exec command="gulp" dir="${integration.dir}" passthru="true" checkreturn="true" />
+      </then>
+      <else>
+        <echo msg="Gulpfile.js n'existe pas !" />
+      </else>
+    </if>
+  </target>
+
+</project>

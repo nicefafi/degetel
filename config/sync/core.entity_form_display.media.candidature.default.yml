@@ -1,0 +1,28 @@
+uuid: a3a653bc-6e8f-474e-95be-17688e01849a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.candidature.field_media_file
+    - media.type.candidature
+  module:
+    - file
+id: media.candidature.default
+targetEntityType: media
+bundle: candidature
+mode: default
+content:
+  field_media_file:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

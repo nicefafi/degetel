@@ -1,0 +1,60 @@
+uuid: c2fa0e40-3547-4a62-ac0a-0a9359e189ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_clients.field_image
+    - taxonomy.vocabulary.nos_clients
+  module:
+    - media_library
+    - path
+    - text
+id: taxonomy_term.nos_clients.default
+targetEntityType: taxonomy_term
+bundle: nos_clients
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+hidden: {  }

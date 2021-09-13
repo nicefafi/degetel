@@ -1,0 +1,8 @@
+uuid: 9ba444f5-5ae4-4df0-881a-361add2481f8
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos offres'
+vid: nos_offres
+description: ''
+weight: 0

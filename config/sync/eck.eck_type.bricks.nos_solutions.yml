@@ -1,0 +1,9 @@
+uuid: 871e0843-b741-4080-99f6-862fb9e4999e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: nos_solutions
+name: 'Nos solutions'
+description: ''

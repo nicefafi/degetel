@@ -1,0 +1,42 @@
+uuid: 750df8c0-76ad-4b6d-a923-17334f46359f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.histoire
+    - field.field.bricks.histoire.field_annee
+    - field.field.bricks.histoire.field_media_image
+    - field.field.bricks.histoire.field_texte
+  module:
+    - yearonly
+id: bricks.histoire.default
+targetEntityType: bricks
+bundle: histoire
+mode: default
+content:
+  field_annee:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: yearonly_default
+    region: content
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_texte:
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  langcode: true
+  title: true

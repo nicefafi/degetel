@@ -1,0 +1,21 @@
+uuid: 4aeb20f8-ecc8-4758-8160-16e1b7a90cdd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.rich_text_cta
+    - field.storage.bricks.field_wysiwyg
+  module:
+    - text
+id: bricks.rich_text_cta.field_wysiwyg
+field_name: field_wysiwyg
+entity_type: bricks
+bundle: rich_text_cta
+label: Wysiwyg
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

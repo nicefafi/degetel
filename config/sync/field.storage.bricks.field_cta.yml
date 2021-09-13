@@ -1,0 +1,19 @@
+uuid: bb01185b-3946-4d1e-8728-096d11d19a0c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: bricks.field_cta
+field_name: field_cta
+entity_type: bricks
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

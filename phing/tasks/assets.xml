@@ -1,0 +1,59 @@
+<project name="assets" default="assets:synchronize">
+
+    <!-- ## Properties -->
+
+    <property name="drush.bin"    value="${project.basedir}/bin/drush" />
+    <property name="path.shared.asset"    value="" />
+    <property name="path.assets.directory" value="/data/shared/drupal/discover" />
+    <property name="path.assets.directory.dev" value="/data/shared/drupal/discover" />
+    <property name="prd.landingpages.host" value="webnode71.drupal.private.prd.vpc-eu01.it3ds.net" />
+    <property name="user.server.prd"    value="wwwdev" />
+    <property name="drush.target" value="" />
+
+    <target name="assets:synchronize"
+            description="Synchronize assets">
+        <echo msg="Compress assets on production............................." />
+        <exec command="ssh ${user.server.prd}@${prd.landingpages.host} -t 'cd ${path.assets.directory}; tar -pczf files.tar.gz files --exclude=files/css --exclude=files/tmp --exclude=files/php --exclude=files/js'"
+              passthru="true"
+              checkreturn="true" />
+
+        <echo msg="Synchronize assets............................." />
+        <exec command="rsync -chavzP --stats ${user.server.prd}@${prd.landingpages.host}:${path.assets.directory}/files.tar.gz . "
+              passthru="true"
+              dir="${path.assets.directory.dev}"
+              checkreturn="true" />
+
+        <echo msg="Delete compressed files............................." />
+        <exec command="ssh ${user.server.prd}@${prd.landingpages.host} -t 'cd ${path.assets.directory}; rm files.tar.gz'"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+
+    <target name="assets:clean-files"
+            description="Synchronize assets">
+        <if>
+            <istrue value="${path.assets.directory.dev}/files.tar.gz" />
+            <then>
+                <echo msg="Decompress file.tar.gz............................." />
+                <exec command="rm -rf ${path.assets.directory.dev}/files"
+                      passthru="true"
+                      dir="${path.assets.directory.dev}"
+                      checkreturn="true" />
+                <exec command="tar xvf ${path.assets.directory.dev}/files.tar.gz"
+                      passthru="true"
+                      dir="${path.assets.directory.dev}"
+                      checkreturn="true" />
+                <exec command="rm ${path.assets.directory.dev}/files.tar.gz"
+                      passthru="true"
+                      dir="${path.assets.directory.dev}"
+                      checkreturn="true" />
+                <exec command="chmod -R 775 ${path.assets.directory.dev}/files"
+                      passthru="true"
+                      dir="${path.assets.directory.dev}"
+                      checkreturn="true" />
+            </then>
+        </if>
+    </target>
+
+
+</project>

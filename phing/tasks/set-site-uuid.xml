@@ -1,0 +1,11 @@
+<project name="set-site-uuid" default="set-site-uuid">
+  
+  <!-- Synchronise the site uuid". -->
+  <target name="set-site-uuid">
+    <echo msg="Start set system.site:uuid ............................." />
+    <exec command="${drush.bin} cset system.site uuid ${website.uuid} -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+</project>

@@ -1,0 +1,18 @@
+uuid: 96f98048-8fa9-4ade-8a98-39f58aaf4629
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nos_valeurs
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.nos_valeurs
+target_entity_type_id: taxonomy_term
+target_bundle: nos_valeurs
+default_langcode: site_default
+language_alterable: true

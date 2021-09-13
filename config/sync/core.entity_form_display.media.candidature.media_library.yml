@@ -1,0 +1,28 @@
+uuid: 2fedfeab-adad-4877-85b1-aa897e5c671f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.candidature.field_media_file
+    - media.type.candidature
+id: media.candidature.media_library
+targetEntityType: media
+bundle: candidature
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_file: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

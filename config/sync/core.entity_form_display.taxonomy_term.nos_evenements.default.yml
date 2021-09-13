@@ -1,0 +1,70 @@
+uuid: 05ebe35e-d9a9-4a26-8857-a2a8fcf76970
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nos_evenements.field_date
+    - field.field.taxonomy_term.nos_evenements.field_image
+    - taxonomy.vocabulary.nos_evenements
+  module:
+    - datetime
+    - path
+    - text
+id: taxonomy_term.nos_evenements.default
+targetEntityType: taxonomy_term
+bundle: nos_evenements
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+hidden: {  }

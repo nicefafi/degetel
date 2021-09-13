@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Drupal9 Build-Project-DEGETEL" default="help">
+
+  <property file="phing/build.properties.projet"/>
+
+  <target name="help" description="Phing target list">
+    <exec executable="${phing.bin}"
+          passthru="true">
+      <arg value="-l"/>
+    </exec>
+  </target>
+
+  <import file="phing/tasks/assets.xml"/>
+  <import file="phing/tasks/cmi.xml"/>
+  <import file="phing/tasks/cache.xml"/>
+  <import file="phing/tasks/composer.xml"/>
+  <import file="phing/tasks/database.xml"/>
+  <import file="phing/tasks/enable-dev-settings.xml"/>
+  <import file="phing/tasks/install.xml"/>
+  <import file="phing/tasks/maintenance-mode.xml"/>
+  <import file="phing/tasks/modules.xml"/>
+  <import file="phing/tasks/set-config-dir.xml"/>
+  <import file="phing/tasks/set-shortcut-uuid.xml"/>
+  <import file="phing/tasks/set-site-uuid.xml"/>
+  <import file="phing/tasks/update-password.xml"/>
+  <import file="phing/tasks/writable-files-folder.xml"/>
+  <import file="phing/tasks/writable-settings.xml"/>
+  <import file="phing/tasks/version.xml"/>
+
+  <target
+    name="set-config-uuid"
+    description="Set UUID system.site / Shortcut."
+    depends="set-site-uuid, set-shortcut-uuid"/>
+
+  <target
+    name="writable-settings-drupal:0755"
+    description="Install the website and set up the development environment."
+    depends="writable-settings-folder, writable-settings-php"/>
+
+  <target
+    name="install-drupal"
+    description="Install the website and set up the local development environment."
+    depends="install, set-config-uuid, import-config, locale-update, import-content, drush-cache:rebuild"/>
+
+  <target
+    name="build-drupal"
+    description="Build the website and set up the development environment Drupal (Back)."
+    depends="install-composer-dependencies, drush-cache:rebuild, drush-database:update, locale-update, drush-cache:rebuild"/>
+<!-- , import-config, drush-config:import:local -->
+  <target
+    name="deploy-drupal"
+    description="Deployment tasks on the dev environment."
+    depends="drush-cache:rebuild, drush-database:update, import-config, locale-update, drush-cache:rebuild"/>
+    <!-- depends="drush-maintenance:on, drush-cache:rebuild, drush-database:update, import-config, locale-update, drush-maintenance:off, drush-cache:rebuild"/> -->
+</project>

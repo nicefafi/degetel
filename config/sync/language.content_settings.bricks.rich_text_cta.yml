@@ -1,0 +1,18 @@
+uuid: 8068755a-8ca2-4950-8f65-3347eb8e2d4a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.rich_text_cta
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: bricks.rich_text_cta
+target_entity_type_id: bricks
+target_bundle: rich_text_cta
+default_langcode: site_default
+language_alterable: true

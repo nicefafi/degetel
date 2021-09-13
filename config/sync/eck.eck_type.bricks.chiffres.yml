@@ -1,0 +1,9 @@
+uuid: 41e59934-9f50-448c-8a3a-998755cc671c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: chiffres
+name: Chiffres
+description: ''

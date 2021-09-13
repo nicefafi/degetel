@@ -1,0 +1,26 @@
+uuid: 82d54708-378f-4863-94ca-f4f0229c7cfa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.who_s_online
+  module:
+    - views
+  theme:
+    - bootstrap_for_drupal
+_core:
+  default_config_hash: etvNC6rJMDwO5u3dE9a_WfpaQ9sWrYhQbQqtIfIga5M
+id: bootstrap_for_drupal_views_block__who_s_online_who_s_online_block
+theme: bootstrap_for_drupal
+region: sidebar_left
+weight: -6
+provider: null
+plugin: 'views_block:who_s_online-who_s_online_block'
+settings:
+  id: 'views_block:who_s_online-who_s_online_block'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

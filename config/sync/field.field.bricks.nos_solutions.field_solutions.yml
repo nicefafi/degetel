@@ -1,0 +1,29 @@
+uuid: 99694725-d751-4125-9b88-4bf576652059
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_type.bricks.nos_solutions
+    - field.storage.bricks.field_solutions
+    - taxonomy.vocabulary.nos_solutions
+id: bricks.nos_solutions.field_solutions
+field_name: field_solutions
+entity_type: bricks
+bundle: nos_solutions
+label: Solution(s)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nos_solutions: nos_solutions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

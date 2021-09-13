@@ -1,0 +1,31 @@
+uuid: d508f8cd-a9d7-4ea2-b647-66ee5ff9e174
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.candidature.field_media_file
+    - image.style.medium
+    - media.type.candidature
+  module:
+    - image
+id: media.candidature.media_library
+targetEntityType: media
+bundle: candidature
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_file: true
+  langcode: true
+  name: true
+  uid: true

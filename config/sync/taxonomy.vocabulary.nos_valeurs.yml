@@ -1,0 +1,8 @@
+uuid: 05deeacb-040d-4415-a41e-f154a4efed5c
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos valeurs'
+vid: nos_valeurs
+description: ''
+weight: 0

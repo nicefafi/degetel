@@ -1,0 +1,8 @@
+uuid: 919a66aa-f451-45ac-985f-94730e3c43bc
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nos secteurs'
+vid: nos_secteurs
+description: ''
+weight: 0

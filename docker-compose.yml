@@ -1,0 +1,120 @@
+version: '3.7'
+
+services:
+  ######################
+  # BACK-END services  #
+  ######################
+  degetel_drupal:
+    build:
+      context: ./docker/drupal/
+      args:
+        DRUPAL_VERSION: $DRUPAL_VERSION
+        COMPOSER_VERSION: $COMPOSER_VERSION
+    container_name: ${PROJECT_NAME}_drupal
+    volumes:
+      - ${LOCALPATH}:${DOCKER_DRUPAL_LOCALPATH}
+      - ${LOCALPATH}/html/sites/default:${DOCKER_DRUPAL_LOCALPATH}/html/sites/default
+      - ${LOCALPATH}/html/sites/default/files:${DOCKER_DRUPAL_LOCALPATH}/html/sites/default/files
+    environment:
+      - OPCACHE_ENABLE=${OPCACHE_ENABLE}
+      - APACHE_RUN_USER=${APACHE_USER}
+      - APACHE_RUN_GROUP=${APACHE_USER}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOSTNAME=${MYSQL_HOSTNAME}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - DRUPAL_CONFIG_SYNC=${DRUPAL_CONFIG_SYNC}
+      - DRUPAL_FILE_PRIVATE=${DRUPAL_FILE_PRIVATE}
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.drupal.rule=Host(`degetel.localhost`)"
+      - "traefik.http.routers.drupal.entrypoints=web"
+    expose:
+      - 80
+    depends_on:
+      - rs_mariadb
+    env_file: .env
+    networks:
+      - elk
+
+  degetel_mariadb:
+    image: mariadb
+    container_name: ${PROJECT_NAME}_mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - MYSQL_DATABASE=drupal_degetel
+      - MYSQL_USER=drupal_user
+      - MYSQL_PASSWORD=mysqlpwd
+      #- MYSQL_HOSTNAME=${MYSQL_HOSTNAME}
+      - MYSQL_PORT=3316
+    volumes:
+      - ./database:/var/lib/mysql
+    #restart: always
+    networks:
+      - elk
+    env_file: .env
+
+  degetel_pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: ${PROJECT_NAME}_pma
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: degetel_mariadb
+      #PMA_USER: root
+      #PMA_PASSWORD: mysqlroot
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    expose:
+      - 80
+    #ports:
+    #  - ${PORT_PMA}:80
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pma.rule=Host(`pma.degetel.localhost`)"
+      - "traefik.http.routers.pma.entrypoints=web"
+    links:
+      - rs_mariadb
+    volumes:
+      - /sessions
+    networks:
+      - elk
+    env_file: .env
+
+
+  ###############################
+  # Setup the traefik dashboard #
+  ###############################
+  degetel_traefik:
+    image: traefik
+    container_name: ${PROJECT_NAME}_traefik
+    command:
+      #- "--api.insecure=true --providers.docker"
+      - "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80" # <== http
+      #- "443:443" # <== https
+      - "${PORT_PROXY}:8080" # <== :8080 is where the dashboard runs on
+      - "${PORT_ELASTIC}:9200"
+      - "${PORT_ELASTIC_TCP}:9300"
+      - "${PORT_KIBANA}:5601"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/traefik/traefik.toml:/traefik.toml
+    networks:
+      - elk
+
+######################
+# Networks & Volumes #
+#####################
+networks:
+  elk:
+    driver: bridge
+

@@ -1,0 +1,54 @@
+# Drupal configuration
+# --------------------
+
+# The project name.
+project.name = research-center
+
+# The install profile to use.
+website.profile.name = standard
+
+# The site name.
+website.site.name = DEGETEL
+
+# Comma-separated list of demo users to create. The username and password will
+# be taken from the role.
+drupal.demo.users = administrator
+
+# The base URL. This is used for doing functional tests in Behat and PHPUnit.
+drupal.base_url = http://localhost
+
+# ----- #
+# Paths #
+# ----- #
+project.basedir = /var/www
+# Paths to executables.
+composer.bin = ${project.basedir}/vendor/bin/composer
+drush.bin = ${project.basedir}/vendor/bin/drush
+phing.bin = ${project.basedir}/vendor/bin/phing
+
+# Files and directories inside the Drupal installation.
+website.drupal.dir = ${project.basedir}/html
+
+website.sites.dir = ${website.drupal.dir}/sites
+website.site.dir = ${website.drupal.sites.dir}/all
+
+website.settings.dir = ${website.sites.dir}/default
+website.settings.php = ${website.settings.dir}/settings.php
+website.files.dir = ${website.settings.dir}/files
+website.config.directory = config_sync
+
+website.modules.dir = ${website.drupal.dir}/modules
+website.profiles.dir = ${website.drupal.dir}/profiles
+website.themes.dir = ${website.drupal.dir}/themes
+
+db.dump.path = ${project.basedir}/db-dump
+db.dump.rollback.directory = ${db.dump.path}/dbdump-rollback
+db.dump.develop.directory = ${db.dump.path}/dbdump-develop
+db.dump.s3.directory = ${db.dump.path}/dbdump-latest-aws
+db.dump.rollback.name = ${project.name}-rollback.sql
+db.dump.develop.name = ${project.name}-develop.sql
+db.dump.staging.name.compressed = ${db.dump.develop.name}.gz
+
+# Tests path
+# -------------------
+e2etests.dir = ${project.basedir}/tests

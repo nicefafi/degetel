@@ -1,0 +1,9 @@
+uuid: 529b0c32-df49-45b3-be16-65c73c5fdf66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.bricks
+type: nos_clients
+name: 'Nos clients'
+description: ''

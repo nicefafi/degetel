@@ -1,0 +1,20 @@
+uuid: 1dc77013-c4f7-4583-bd46-ae1b23817de4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: bricks.field_clients
+field_name: field_clients
+entity_type: bricks
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

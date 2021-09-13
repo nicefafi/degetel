@@ -1,0 +1,21 @@
+uuid: ec95bacf-e4b8-42f2-8827-bfd60dd4c19a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_date
+    - taxonomy.vocabulary.nos_evenements
+  module:
+    - datetime
+id: taxonomy_term.nos_evenements.field_date
+field_name: field_date
+entity_type: taxonomy_term
+bundle: nos_evenements
+label: Date
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

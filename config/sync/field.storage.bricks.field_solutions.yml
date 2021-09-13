@@ -1,0 +1,20 @@
+uuid: 115e2032-65a1-4506-a15a-dbaf2a37622f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: bricks.field_solutions
+field_name: field_solutions
+entity_type: bricks
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

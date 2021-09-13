@@ -1,0 +1,21 @@
+uuid: ac781aef-6087-43ff-ab9e-07d9c0a95527
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rich_texte
+    - taxonomy.vocabulary.nos_solutions
+  module:
+    - text
+id: taxonomy_term.nos_solutions.field_rich_texte
+field_name: field_rich_texte
+entity_type: taxonomy_term
+bundle: nos_solutions
+label: 'Rich Texte'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
